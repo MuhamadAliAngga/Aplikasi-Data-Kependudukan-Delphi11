@@ -1,0 +1,129 @@
+object DataModule1: TDataModule1
+  Height = 582
+  Width = 640
+  object UniConnection1: TUniConnection
+    ProviderName = 'MySQL'
+    Database = 'kependudukan'
+    Username = 'root'
+    Server = 'localhost'
+    Connected = True
+    LoginPrompt = False
+    Left = 128
+    Top = 72
+  end
+  object MySQLUniProvider1: TMySQLUniProvider
+    Left = 256
+    Top = 80
+  end
+  object Unikelahiran: TUniTable
+    TableName = 'tkelahiran'
+    Connection = UniConnection1
+    Left = 80
+    Top = 176
+  end
+  object UDSkelahiran: TUniDataSource
+    DataSet = Unikelahiran
+    Left = 232
+    Top = 176
+  end
+  object Qkelahiran: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tkelahiran')
+    Left = 384
+    Top = 176
+  end
+  object Unipendudukdatang: TUniTable
+    TableName = 'tpendudukdatang'
+    Connection = UniConnection1
+    Active = True
+    Left = 80
+    Top = 232
+  end
+  object Unipenduduk: TUniTable
+    TableName = 'tpenduduk'
+    Connection = UniConnection1
+    Active = True
+    Left = 80
+    Top = 312
+  end
+  object Unikartukeluarga: TUniTable
+    TableName = 'tkartukeluarga'
+    Connection = UniConnection1
+    Left = 80
+    Top = 376
+  end
+  object Unipendudukpindah: TUniTable
+    TableName = 'tpenduduk_pindah'
+    Connection = UniConnection1
+    Left = 80
+    Top = 440
+  end
+  object Unikematian: TUniTable
+    TableName = 'tkematian'
+    Connection = UniConnection1
+    Left = 80
+    Top = 512
+  end
+  object Qpendudukdatang: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tpendudukdatang')
+    Left = 384
+    Top = 240
+  end
+  object Qpenduduk: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tpenduduk')
+    Active = True
+    Left = 384
+    Top = 304
+  end
+  object Qkartukeluarga: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tkartukeluarga')
+    Left = 384
+    Top = 368
+  end
+  object Qpendudukpindah: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tpenduduk_pindah')
+    Left = 384
+    Top = 440
+  end
+  object Qkematian: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tkematian')
+    Left = 376
+    Top = 504
+  end
+  object UDSpendudukdatang: TUniDataSource
+    DataSet = Unipendudukdatang
+    Left = 232
+    Top = 240
+  end
+  object UDSpenduduk: TUniDataSource
+    DataSet = Unipenduduk
+    Left = 232
+    Top = 304
+  end
+  object UDSkartukeluarga: TUniDataSource
+    DataSet = Unikartukeluarga
+    Left = 232
+    Top = 368
+  end
+  object UDSpendudukpindah: TUniDataSource
+    DataSet = Unipendudukpindah
+    Left = 232
+    Top = 440
+  end
+  object UDSkematian: TUniDataSource
+    DataSet = Unikematian
+    Left = 232
+    Top = 512
+  end
+end

@@ -1,0 +1,77 @@
+unit pendudukpindah;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
+  Vcl.DBCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TForm6 = class(TForm)
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label5: TLabel;
+    DBEdit5: TDBEdit;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    Label7: TLabel;
+    DBEdit7: TDBEdit;
+    Label8: TLabel;
+    DBEdit8: TDBEdit;
+    Label9: TLabel;
+    GroupBox1: TGroupBox;
+    Edit1: TEdit;
+    Cari: TButton;
+    BtnTambah: TButton;
+    BtnEdit: TButton;
+    BtnSimpan: TButton;
+    BtnHapus: TButton;
+    BtnKeluar: TButton;
+    BtnBatal: TButton;
+    DBGrid1: TDBGrid;
+    procedure BtnKeluarClick(Sender: TObject);
+    procedure BtnBatalClick(Sender: TObject);
+    procedure BtnHapusClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule;
+
+procedure TForm6.BtnBatalClick(Sender: TObject);
+begin
+DataModule1.Unipendudukpindah.Cancel;
+   OnActivate(Sender);
+end;
+
+procedure TForm6.BtnHapusClick(Sender: TObject);
+begin
+if Application.MessageBox('Apakah Anda Ingin Menghapus Data Ini?','Konfirmasi',mb_yesno)=Idyes then
+ Begin
+   DataModule1.Unipendudukpindah.Delete;
+   OnActivate(Sender);
+ End;
+end;
+
+procedure TForm6.BtnKeluarClick(Sender: TObject);
+begin
+close;
+end;
+
+end.

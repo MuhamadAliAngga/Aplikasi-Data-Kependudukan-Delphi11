@@ -1,0 +1,46 @@
+unit DataModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Uni, Data.DB, DBAccess, MemDS, UniProvider,
+  MySQLUniProvider, UniDacVcl;
+
+type
+  TDataModule1 = class(TDataModule)
+    UniConnection1: TUniConnection;
+    MySQLUniProvider1: TMySQLUniProvider;
+    Unikelahiran: TUniTable;
+    UDSkelahiran: TUniDataSource;
+    Qkelahiran: TUniQuery;
+    Unipendudukdatang: TUniTable;
+    Unipenduduk: TUniTable;
+    Unikartukeluarga: TUniTable;
+    Unipendudukpindah: TUniTable;
+    Unikematian: TUniTable;
+    Qpendudukdatang: TUniQuery;
+    Qpenduduk: TUniQuery;
+    Qkartukeluarga: TUniQuery;
+    Qpendudukpindah: TUniQuery;
+    Qkematian: TUniQuery;
+    UDSpendudukdatang: TUniDataSource;
+    UDSpenduduk: TUniDataSource;
+    UDSkartukeluarga: TUniDataSource;
+    UDSpendudukpindah: TUniDataSource;
+    UDSkematian: TUniDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModule1: TDataModule1;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

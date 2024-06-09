@@ -1,0 +1,98 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  Caption = 'Beranda'
+  ClientHeight = 541
+  ClientWidth = 786
+  Color = clBlue
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Menu = MainMenu1
+  WindowState = wsMaximized
+  TextHeight = 15
+  object Label1: TLabel
+    Left = 0
+    Top = 0
+    Width = 786
+    Height = 41
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'SISTEM INFORMASI KEPENDUDUKAN'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -32
+    Font.Name = 'Britannic Bold'
+    Font.Style = []
+    ParentFont = False
+    ExplicitTop = 32
+  end
+  object MainMenu1: TMainMenu
+    Left = 48
+    Top = 72
+    object InputData1: TMenuItem
+      Caption = 'Input Data'
+      object Kelahiran1: TMenuItem
+        Caption = 'Kelahiran'
+      end
+      object PendudukDatang1: TMenuItem
+        Caption = 'Penduduk Datang'
+      end
+    end
+    object Proses1: TMenuItem
+      Caption = 'Proses'
+      object Penduduk1: TMenuItem
+        Caption = 'Penduduk'
+      end
+      object KartuKeluarga1: TMenuItem
+        Caption = 'Kartu Keluarga'
+      end
+      object PendudukPindah1: TMenuItem
+        Caption = 'Penduduk Pindah'
+      end
+      object Kematian1: TMenuItem
+        Caption = 'Kematian'
+      end
+    end
+    object PencarianDanLaporan1: TMenuItem
+      Caption = 'Pencarian Dan Laporan'
+      object Kleahiran1: TMenuItem
+        Caption = 'Kleahiran'
+      end
+      object PendudukDatang2: TMenuItem
+        Caption = 'Penduduk Datang'
+      end
+      object Penduduk2: TMenuItem
+        Caption = 'Penduduk'
+      end
+      object PendudukPindah2: TMenuItem
+        Caption = 'Kartu Keluarga'
+      end
+      object PendudukPindah3: TMenuItem
+        Caption = 'Penduduk Pindah'
+      end
+      object Kematian2: TMenuItem
+        Caption = 'Kematian'
+      end
+    end
+    object Operator1: TMenuItem
+      Caption = 'Operator'
+      object Login1: TMenuItem
+        Caption = 'Login'
+      end
+      object Logout1: TMenuItem
+        Caption = 'Logout'
+      end
+      object Logout2: TMenuItem
+        Caption = 'Pengaturan Password'
+      end
+    end
+    object Keluar1: TMenuItem
+      Caption = 'Keluar'
+      OnClick = Keluar1Click
+    end
+  end
+end

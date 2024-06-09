@@ -1,0 +1,104 @@
+unit DataModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB, MemDS, DBAccess, Uni,
+  UniProvider, MySQLUniProvider;
+
+type
+  TDataModule1 = class(TDataModule)
+    UniConnection1: TUniConnection;
+    Unikelahiran: TUniTable;
+    UDSkelahiran: TUniDataSource;
+    MySQLUniProvider1: TMySQLUniProvider;
+    Unikelahiranno_akte: TStringField;
+    Unikelahirannama: TStringField;
+    Unikelahirantempat_lahir: TStringField;
+    Unikelahirantgl_lahir: TDateField;
+    Unikelahiranjam_lahir: TTimeField;
+    Unikelahiranjenis_kelamin: TStringField;
+    Unikelahiranagama: TStringField;
+    Unikelahiranalamat: TStringField;
+    Unikelahirannama_ayah: TStringField;
+    Unikelahirannama_ibu: TStringField;
+    Unikelahiranpekerjaan: TStringField;
+    Unikelahirananak_ke: TStringField;
+    Qkelahiran: TUniQuery;
+    Unipendudukdatang: TUniTable;
+    Qpendudukdatang: TUniQuery;
+    UDSpendudukdatang: TUniDataSource;
+    Unipendudukdatangnik: TIntegerField;
+    Unipendudukdatangnama_lengkap: TStringField;
+    Unipendudukdatangno_kk: TIntegerField;
+    Unipendudukdatangalamat_asal: TStringField;
+    Unipendudukdatangkelurahan: TStringField;
+    Unipendudukdatangkabupaten_kota: TStringField;
+    Unipendudukdatangprovinsi: TStringField;
+    Unipendudukdatangstatus_no_kk: TStringField;
+    Unipendudukdatangtanggal_kedatangan: TDateField;
+    Unipendudukdatangalasan_datang: TStringField;
+    Unipendudukdatangalamat_sekarang: TStringField;
+    Unipenduduk: TUniTable;
+    UDSpenduduk: TUniDataSource;
+    Qpenduduk: TUniQuery;
+    Unipenduduknik: TIntegerField;
+    Unipenduduknama_lengkap: TStringField;
+    Unipenduduktempat_lahir: TStringField;
+    Unipendudukjenis_kelamin: TStringField;
+    Unipendudukalamat: TStringField;
+    Unipendudukkelurahan: TStringField;
+    Unipendudukkecamatan: TStringField;
+    Unipendudukkabupaten_kota: TStringField;
+    Unipendudukprovinsi: TStringField;
+    Unipendudukagama: TStringField;
+    Unipendudukpendidikan: TStringField;
+    Unipendudukpekerjaan: TStringField;
+    Unipendudukgol_darah: TStringField;
+    Unipendudukstatus_perkawinan: TStringField;
+    Unipenduduktgl_perkawinan: TDateField;
+    Unipendudukkewarganegaraan: TStringField;
+    Unipendudukno_paspor: TIntegerField;
+    Unipendudukno_kitap: TIntegerField;
+    Unipenduduknama_ayah: TStringField;
+    Unipenduduknama_ibu: TStringField;
+    Unipendudukstatus: TStringField;
+    Unikartukeluarga: TUniTable;
+    Qkartukeluarga: TUniQuery;
+    UDSkartukeluarga: TUniDataSource;
+    UnikartukeluargaID: TStringField;
+    Unikartukeluargano_kk: TIntegerField;
+    Unikartukeluarganik: TIntegerField;
+    Unikartukeluarganama_kepala_keluarga: TStringField;
+    Unikartukeluargastatus_hubungan_keluarga: TStringField;
+    Unikartukeluargatgl_dikeuarkan: TDateField;
+    Unipendudukpindah: TUniTable;
+    UDSpendudukpindah: TUniDataSource;
+    Qpendudukpindah: TUniQuery;
+    Unipendudukpindahno_surat_pindah: TIntegerField;
+    Unipendudukpindahnik: TIntegerField;
+    Unipendudukpindahno_kk: TIntegerField;
+    Unipendudukpindahalasan_pindah: TStringField;
+    Unipendudukpindahalamat_tujuan: TStringField;
+    Unipendudukpindahjenis_kepindahan: TStringField;
+    Unipendudukpindahstatus_yang_pindah: TStringField;
+    Unipendudukpindahjumlah_keluarga_pindah: TStringField;
+    Unikematian: TUniTable;
+    UDSkematian: TUniDataSource;
+    Qkematian: TUniQuery;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModule1: TDataModule1;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

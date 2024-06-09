@@ -1,0 +1,431 @@
+object DataModule1: TDataModule1
+  Height = 579
+  Width = 640
+  object UniConnection1: TUniConnection
+    ProviderName = 'MySQL'
+    Port = 3306
+    Database = 'kependudukan'
+    Username = 'root'
+    Server = 'localhost'
+    Connected = True
+    Left = 232
+    Top = 32
+  end
+  object Unikelahiran: TUniTable
+    TableName = 'tkelahiran'
+    Connection = UniConnection1
+    IndexFieldNames = #39'anak_ke'#39' DESC'
+    Left = 48
+    Top = 144
+    object Unikelahiranno_akte: TStringField
+      FieldName = 'no_akte'
+      Required = True
+      Size = 16
+    end
+    object Unikelahirannama: TStringField
+      FieldName = 'nama'
+      Required = True
+      Size = 30
+    end
+    object Unikelahirantempat_lahir: TStringField
+      FieldName = 'tempat_lahir'
+      Required = True
+      Size = 30
+    end
+    object Unikelahirantgl_lahir: TDateField
+      FieldName = 'tgl_lahir'
+      Required = True
+    end
+    object Unikelahiranjam_lahir: TTimeField
+      FieldName = 'jam_lahir'
+      Required = True
+    end
+    object Unikelahiranjenis_kelamin: TStringField
+      FieldName = 'jenis_kelamin'
+      Required = True
+      Size = 15
+    end
+    object Unikelahiranagama: TStringField
+      FieldName = 'agama'
+      Required = True
+      Size = 15
+    end
+    object Unikelahiranalamat: TStringField
+      FieldName = 'alamat'
+      Required = True
+      Size = 50
+    end
+    object Unikelahirannama_ayah: TStringField
+      FieldName = 'nama_ayah'
+      Required = True
+      Size = 50
+    end
+    object Unikelahirannama_ibu: TStringField
+      FieldName = 'nama_ibu'
+      Required = True
+      Size = 50
+    end
+    object Unikelahiranpekerjaan: TStringField
+      FieldName = 'pekerjaan'
+      Required = True
+      Size = 50
+    end
+    object Unikelahirananak_ke: TStringField
+      FieldName = 'anak_ke'
+      Required = True
+      Size = 50
+    end
+  end
+  object UDSkelahiran: TUniDataSource
+    DataSet = Unikelahiran
+    Left = 144
+    Top = 144
+  end
+  object MySQLUniProvider1: TMySQLUniProvider
+    Left = 344
+    Top = 32
+  end
+  object Qkelahiran: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tkelahiran')
+    Left = 240
+    Top = 144
+  end
+  object Unipendudukdatang: TUniTable
+    TableName = 'tpendudukdatang'
+    Connection = UniConnection1
+    Left = 48
+    Top = 208
+    object Unipendudukdatangnik: TIntegerField
+      FieldName = 'nik'
+      Required = True
+    end
+    object Unipendudukdatangnama_lengkap: TStringField
+      FieldName = 'nama_lengkap'
+      Required = True
+      Size = 50
+    end
+    object Unipendudukdatangno_kk: TIntegerField
+      FieldName = 'no_kk'
+      Required = True
+    end
+    object Unipendudukdatangalamat_asal: TStringField
+      FieldName = 'alamat_asal'
+      Required = True
+      Size = 75
+    end
+    object Unipendudukdatangkelurahan: TStringField
+      FieldName = 'kelurahan'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukdatangkabupaten_kota: TStringField
+      FieldName = 'kabupaten_kota'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukdatangprovinsi: TStringField
+      FieldName = 'provinsi'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukdatangstatus_no_kk: TStringField
+      FieldName = 'status_no_kk'
+      Required = True
+    end
+    object Unipendudukdatangtanggal_kedatangan: TDateField
+      FieldName = 'tanggal_kedatangan'
+      Required = True
+    end
+    object Unipendudukdatangalasan_datang: TStringField
+      FieldName = 'alasan_datang'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukdatangalamat_sekarang: TStringField
+      FieldName = 'alamat_sekarang'
+      Required = True
+      Size = 75
+    end
+  end
+  object Qpendudukdatang: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tpendudukdatang')
+    Left = 248
+    Top = 208
+  end
+  object UDSpendudukdatang: TUniDataSource
+    DataSet = Unipendudukdatang
+    Left = 144
+    Top = 208
+  end
+  object Unipenduduk: TUniTable
+    TableName = 'tpenduduk'
+    Connection = UniConnection1
+    Left = 40
+    Top = 272
+    object Unipenduduknik: TIntegerField
+      FieldName = 'nik'
+      Required = True
+    end
+    object Unipenduduknama_lengkap: TStringField
+      FieldName = 'nama_lengkap'
+      Required = True
+      Size = 50
+    end
+    object Unipenduduktempat_lahir: TStringField
+      FieldName = 'tempat_lahir'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukjenis_kelamin: TStringField
+      FieldName = 'jenis_kelamin'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukalamat: TStringField
+      FieldName = 'alamat'
+      Required = True
+      Size = 75
+    end
+    object Unipendudukkelurahan: TStringField
+      FieldName = 'kelurahan'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukkecamatan: TStringField
+      FieldName = 'kecamatan'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukkabupaten_kota: TStringField
+      FieldName = 'kabupaten_kota'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukprovinsi: TStringField
+      FieldName = 'provinsi'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukpekerjaan: TStringField
+      FieldName = 'pekerjaan'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukgol_darah: TStringField
+      FieldName = 'gol_darah'
+      Required = True
+      Size = 2
+    end
+    object Unipendudukstatus_perkawinan: TStringField
+      FieldName = 'status_perkawinan'
+      Required = True
+      Size = 30
+    end
+    object Unipenduduktgl_perkawinan: TDateField
+      FieldName = 'tgl_perkawinan'
+      Required = True
+    end
+    object Unipendudukkewarganegaraan: TStringField
+      FieldName = 'kewarganegaraan'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukno_paspor: TIntegerField
+      FieldName = 'no_paspor'
+      Required = True
+    end
+    object Unipendudukno_kitap: TIntegerField
+      FieldName = 'no_kitap'
+      Required = True
+    end
+    object Unipenduduknama_ayah: TStringField
+      FieldName = 'nama_ayah'
+      Required = True
+      Size = 50
+    end
+    object Unipenduduknama_ibu: TStringField
+      FieldName = 'nama_ibu'
+      Required = True
+      Size = 50
+    end
+    object Unipendudukstatus: TStringField
+      FieldName = 'status'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukagama: TStringField
+      FieldName = 'agama'
+      Required = True
+      Size = 30
+    end
+    object Unipendudukpendidikan: TStringField
+      FieldName = 'pendidikan'
+      Required = True
+    end
+  end
+  object UDSpenduduk: TUniDataSource
+    DataSet = Unipenduduk
+    Left = 144
+    Top = 271
+  end
+  object Qpenduduk: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tpenduduk')
+    Left = 240
+    Top = 272
+  end
+  object Unikartukeluarga: TUniTable
+    TableName = 'tkartukeluarga'
+    Connection = UniConnection1
+    Left = 40
+    Top = 344
+    object UnikartukeluargaID: TStringField
+      FieldName = 'ID'
+      Required = True
+      Size = 16
+    end
+    object Unikartukeluargano_kk: TIntegerField
+      FieldName = 'no_kk'
+      Required = True
+    end
+    object Unikartukeluarganik: TIntegerField
+      FieldName = 'nik'
+      Required = True
+    end
+    object Unikartukeluarganama_kepala_keluarga: TStringField
+      FieldName = 'nama_kepala_keluarga'
+      Required = True
+      Size = 50
+    end
+    object Unikartukeluargastatus_hubungan_keluarga: TStringField
+      FieldName = 'status_hubungan_keluarga'
+      Required = True
+      Size = 50
+    end
+    object Unikartukeluargatgl_dikeuarkan: TDateField
+      FieldName = 'tgl_dikeuarkan'
+      Required = True
+    end
+  end
+  object Qkartukeluarga: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tkartukeluarga')
+    Left = 248
+    Top = 344
+  end
+  object UDSkartukeluarga: TUniDataSource
+    DataSet = Unikartukeluarga
+    Left = 144
+    Top = 344
+  end
+  object Unipendudukpindah: TUniTable
+    TableName = 'tpenduduk_pindah'
+    Connection = UniConnection1
+    Left = 40
+    Top = 416
+    object Unipendudukpindahno_surat_pindah: TIntegerField
+      FieldName = 'no_surat_pindah'
+      Required = True
+    end
+    object Unipendudukpindahnik: TIntegerField
+      FieldName = 'nik'
+      Required = True
+    end
+    object Unipendudukpindahno_kk: TIntegerField
+      FieldName = 'no_kk'
+      Required = True
+    end
+    object Unipendudukpindahalasan_pindah: TStringField
+      FieldName = 'alasan_pindah'
+      Required = True
+      Size = 50
+    end
+    object Unipendudukpindahalamat_tujuan: TStringField
+      FieldName = 'alamat_tujuan'
+      Required = True
+      Size = 50
+    end
+    object Unipendudukpindahjenis_kepindahan: TStringField
+      FieldName = 'jenis_kepindahan'
+      Required = True
+      Size = 50
+    end
+    object Unipendudukpindahstatus_yang_pindah: TStringField
+      FieldName = 'status_yang_pindah'
+      Required = True
+      Size = 50
+    end
+    object Unipendudukpindahjumlah_keluarga_pindah: TStringField
+      FieldName = 'jumlah_keluarga_pindah'
+      Required = True
+      Size = 10
+    end
+  end
+  object UDSpendudukpindah: TUniDataSource
+    DataSet = Unipendudukpindah
+    Left = 144
+    Top = 416
+  end
+  object Qpendudukpindah: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tpenduduk_pindah')
+    Left = 256
+    Top = 416
+  end
+  object Unikematian: TUniTable
+    TableName = 'tkematian'
+    Connection = UniConnection1
+    Left = 40
+    Top = 488
+    object Unikematianno_surat_kematian: TIntegerField
+      FieldName = 'no_surat_kematian'
+      Required = True
+    end
+    object Unikematiannik: TIntegerField
+      FieldName = 'nik'
+      Required = True
+    end
+    object Unikematianumur: TIntegerField
+      FieldName = 'umur'
+      Required = True
+    end
+    object Unikematiantgl_kematian: TDateField
+      FieldName = 'tgl_kematian'
+      Required = True
+    end
+    object Unikematiansebab: TStringField
+      FieldName = 'sebab'
+      Required = True
+      Size = 50
+    end
+    object Unikematiantempat_kematian: TStringField
+      FieldName = 'tempat_kematian'
+      Required = True
+      Size = 30
+    end
+    object Unikematianyang_menerangkan: TStringField
+      FieldName = 'yang_menerangkan'
+      Required = True
+      Size = 50
+    end
+  end
+  object UDSkematian: TUniDataSource
+    DataSet = Unikematian
+    Left = 144
+    Top = 488
+  end
+  object Qkematian: TUniQuery
+    Connection = UniConnection1
+    SQL.Strings = (
+      'select*from tkematian')
+    Left = 256
+    Top = 488
+  end
+end
